@@ -1,0 +1,28 @@
+<h1>Relish News</h1>
+
+<div class="row">
+  <h1>Top US News</h1>
+</div>
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Headline</th>
+        <th>Source</th>
+        <th>Published</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @usNews.each do |story| %>
+        <tr>
+          <td><%= image_tag(story['urlToImage'], width: "75px") if !story['urlToImage'].nil? %>
+          <td><%= link_to story['title'], story['url'], target: :_blank %></td>
+          <td><%= story['source']['name'] %></td>
+          <td><%= story['publishedAt'] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </tab
+
+

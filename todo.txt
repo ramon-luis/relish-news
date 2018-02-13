@@ -1,0 +1,11 @@
+TODO
+
+create header with links - use placeholders as needed
+wireframe user profile to browse/add/save newsfeeds
+create favorites and users associations
+implement CRUD for favorites
+create dynamic homepage based on user login
+rich image vs text only display
+
+add other APIs: twitter, gmail, HN, other
+improve visual display
