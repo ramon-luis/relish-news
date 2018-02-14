@@ -1,34 +1,5 @@
-<td><%= image_tag(article['urlToImage'], width: "75px") if !article['urlToImage'].nil? %></td>
-<td><%= article['source']['name'] %></td>
 
 
- <img class="card-img-top" src="..." alt="Card image cap">
- <a href="#" class="btn btn-primary">Read story</a>
 
 
-<div class="row">
-  <h1><%= @topic.name %></h1>
-</div>
-<div class="row">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Headline</th>
-        <th>Source</th>
-        <th>Published</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @articles.each do |article| %>
-        <tr>
-          <% image_url = article['urlToImage'].nil? ? "http://www.pmslweb.com/the-blog/wp-content/uploads/2017/02/22-dolphin-grows-human-arms-funny-news-article.jpg" : article['urlToImage'] %>
-          <td><%= image_tag(image_url, width: "75px") %></td>
-          <td><%= link_to article['title'], article['url'], target: :_blank %></td>
-          <td><%= article['source']['name'] %></td>
-          <td><%= article['publishedAt'] %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+
