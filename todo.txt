@@ -1,11 +1,22 @@
 TODO
 
-create header with links - use placeholders as needed
-wireframe user profile to browse/add/save newsfeeds
-create favorites and users associations
-implement CRUD for favorites
-create dynamic homepage based on user login
-rich image vs text only display
+-- THIS WEEK --
+complete CRUD for user favorites
+add edit function for favorites rank
+validate that favorites are unique in name and rank
+sort favorites displayed by user rank
+add models to YML (commented out)
+update README
 
+-- NEXT WEEK --
+clean up visuals
+add front page interaction for favorites: CRUD
+refactor into partials where useful
+
+-- FOR FINAL
+link favorites to topics
+add search functionality
+
+-- BONUS --
+rich image vs text only display
 add other APIs: twitter, gmail, HN, other
-improve visual display

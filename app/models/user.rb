@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 
   attr_accessor :remember_token
+  has_many :favorites
+
   # always downcase emails before saving
   before_save { self.email.downcase! }
 
@@ -15,7 +17,7 @@ class User < ApplicationRecord
 
   # validate password
   has_secure_password
-  validates :password, presence: true, length: { minimum: 8 }
+  validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
 
   # Returns the hash digest of the given string.
   def User.digest(string)

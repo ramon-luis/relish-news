@@ -1,3 +1,19 @@
 <h1><%= @user.name %></h1>
+<p>All about your news stuff.</p>
 
-All about your news stuff.
+<p><%= link_to "Edit Profile", "/users/#{@user.id}/edit" %></p>
+<p><%= link_to "Delete Profile", "/users/#{@user.id}/delete" %></p>
+
+<ul>
+  <% NewsApi::STANDARD_TOPICS.each do |key, hash| %>
+    <li><%= button_to "Add #{hash[:name]}", user_favorites_path(@user), method: :post,
+          params: { name: hash[:name], rank: @user.favorites.length + 1, user_id: @user.id } %></li>
+  <% end %>
+</ul>
+
+<h2>Your Favorites</h2>
+<ul>
+  <% @user.favorites.each do |favorite| %>
+    <li><%= favorite.name %></li>
+  <% end %>
+</ul>

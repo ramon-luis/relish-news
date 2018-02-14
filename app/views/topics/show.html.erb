@@ -1,7 +1,5 @@
-<% @favorites.each do |favorite| %>
-
 <div class="row">
-  <h3><%= favorite[:topic].name %></h3>
+  <h1><%= @topic.name %></h1>
 </div>
 <div class="row">
   <table class="table">
@@ -14,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <% favorite[:topic_articles].each do |article| %>
+      <% @articles.each do |article| %>
         <tr>
           <td><%= image_tag(article['urlToImage'], width: "75px") if !article['urlToImage'].nil? %></td>
           <td><%= link_to article['title'], article['url'], target: :_blank %></td>
@@ -25,5 +23,3 @@
     </tbody>
   </table>
 </div>
-<% end %>
-

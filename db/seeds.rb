@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# create standard topics
+
+Topic.delete_all
+
+NewsApi::STANDARD_TOPICS.each do |key, hash|
+  Topic.create(name: hash[:name], route: hash[:route], url_param: hash[:url_param])
+end
+
+
+
