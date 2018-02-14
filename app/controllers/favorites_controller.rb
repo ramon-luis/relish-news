@@ -6,5 +6,11 @@ class FavoritesController < ApplicationController
     redirect_to '/profile'
   end
 
+  def destroy
+    favorite = Favorite.find_by(id: params['id'])
+    favorite.delete
+    redirect_to '/profile'
+  end
+
 
 end

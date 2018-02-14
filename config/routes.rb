@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/profile/edit' => 'users#edit'
   patch '/profile' => 'users#update'
 
-  # users
+  # users and favorites
   resources :users do
     resources :favorites
   end
