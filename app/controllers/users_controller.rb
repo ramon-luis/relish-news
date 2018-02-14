@@ -50,9 +50,9 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
     log_out if logged_in?
-    redirect_to root_url
     delete_favorites(user.id)
     user.delete
+    redirect_to root_url
   end
 
   private

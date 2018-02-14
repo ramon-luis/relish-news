@@ -1,29 +1,16 @@
 <% @favorites.each do |favorite| %>
-
-<div class="row">
-  <h3><%= favorite[:topic].name %></h3>
-</div>
-<div class="row">
-  <table class="table">
-    <thead>
+  <table class="table table-sm table-hover">
+    <thead class="bg-dark text-white">
       <tr>
-        <th>Image</th>
-        <th>Headline</th>
-        <th>Source</th>
-        <th>Published</th>
+        <th scope="col"><%= favorite[:topic].name %></th>
       </tr>
     </thead>
     <tbody>
       <% favorite[:topic_articles].each do |article| %>
         <tr>
-          <td><%= image_tag(article['urlToImage'], width: "75px") if !article['urlToImage'].nil? %></td>
-          <td><%= link_to article['title'], article['url'], target: :_blank %></td>
-          <td><%= article['source']['name'] %></td>
-          <td><%= article['publishedAt'] %></td>
+          <td><small><%= link_to "#{article['title']} - #{article['source']['name']}", article['url'], target: :_blank %></small></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-</div>
 <% end %>
-
