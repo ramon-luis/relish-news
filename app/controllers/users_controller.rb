@@ -77,7 +77,7 @@ class UsersController < ApplicationController
     end
 
     def delete_favorites(user_id)
-      Favorite.each |favorite| do
+      Favorite.each do |favorite|
         if favorite.user_id == user_id
           favorite.delete
         end
