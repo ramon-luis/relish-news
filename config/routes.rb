@@ -13,10 +13,13 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  # user profile shortcut
-  get '/profile' => 'users#show'
-  get '/profile/edit' => 'users#edit'
-  patch '/profile' => 'users#update'
+  # user account shortcut
+  get '/account' => 'users#show'
+  get '/account/edit' => 'users#edit'
+  patch '/account' => 'users#update'
+
+  # user favorites shortcut
+  get '/favorites' => 'favorites#index'
 
   # users and favorites
   resources :users do

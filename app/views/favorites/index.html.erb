@@ -1,0 +1,41 @@
+<h1><%= "Favorites for #{@user.name}" %></h1>
+<p>Update your favorite news topics below.</p>
+
+
+<div class="card-deck mt-6">
+
+  <div class="col-md-5">
+    <div class="card h-100 border-dark mb-3" style="width: 22rem;">
+      <div class="card-header text-white bg-dark">
+        Available Topics
+      </div>
+      <ul class="list-group">
+        <% NewsApi::STANDARD_TOPICS.each do |key, topic| %>
+          <li class="list-group-item d-flex justify-content-between">
+            <%= topic[:name] %>
+            <% disabled_status = !@favorites.find_by(name: topic[:name]).nil? %>
+            <%= button_to "save to favorites", user_favorites_path(@user.id), class: "btn btn-outline-success", disabled: disabled_status, method: :post, params: { name: topic[:name], rank: @user.favorites.length + 1, user_id: @user.id } %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-5">
+    <div class="card h-100 border-dark mb-3" style="width: 22rem;">
+      <div class="card-header text-white bg-success">
+        Your favorites
+      </div>
+      <ul class="list-group">
+        <% @favorites.each do |favorite| %>
+          <li class="list-group-item d-flex justify-content-between">
+           <%= favorite.name %>
+            <%= button_to "remove", user_favorite_path(@user, favorite.id), class: "btn btn-sm btn-outline-danger", method: :delete, params: { id: favorite.id, user_id: @user.id } %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</div>
+

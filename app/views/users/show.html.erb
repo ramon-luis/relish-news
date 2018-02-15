@@ -1,19 +1,10 @@
-<h1><%= @user.name %></h1>
-<p>All about your news stuff.</p>
+<h1><%= "Account details for #{@user.name}" %></h1>
 
-<p><%= link_to "Edit Profile", "/users/#{@user.id}/edit" %></p>
-<p><%= link_to "Delete Profile", "/users/#{@user.id}/delete" %></p>
+<p><%= "Name: #{@user.name}" %></p>
+<p><%= "Email: #{@user.email}" %></p>
+<p>Password: ***************</p>
 
-<ul>
-  <% NewsApi::STANDARD_TOPICS.each do |key, hash| %>
 
-    <li><%= button_to "+ #{hash[:name]}", user_favorites_path(@user), class: "btn btn-success", method: :post, params: { name: hash[:name], rank: @user.favorites.length + 1, user_id: @user.id } %></li>
-  <% end %>
-</ul>
+<p><%= link_to "Edit Account", "/users/#{@user.id}/edit" %></p>
+<p><%= link_to "Delete Account", "/users/#{@user.id}/delete" %></p>
 
-<h2>Your Favorites</h2>
-<ul>
-  <% @user.favorites.each do |favorite| %>
-    <li><%= button_to "- #{favorite.name}", user_favorite_path(@user, favorite.id), class: " btn btn-danger", method: :delete, params: { id: favorite.id, user_id: @user.id } %></li>
-  <% end %>
-</ul>

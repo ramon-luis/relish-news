@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214032348) do
+ActiveRecord::Schema.define(version: 20180214142413) do
 
   create_table "favorites", force: :cascade do |t|
     t.string "name"

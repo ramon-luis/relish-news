@@ -10,10 +10,19 @@ class NewsApi
   API_KEY = 'apiKey=4b685ee819764643b10ccbe6e533d1fd'
 
   # can not mix country & sources
-  STANDARD_TOPICS = { :espn => { name: "ESPN", route: "espn", url_param: "sources=espn" },
+  STANDARD_TOPICS = { :bleacherreport => { name: "Bleacher Report", route: "bleacher-report", url_param: "sources=bleacher-report" },
+                      :bloomberg => { name: "Bloomberg", route: "bloomberg", url_param: "sources=bloomberg" },
                       :cnn => { name: "CNN", route: "cnn", url_param: "sources=cnn" },
+                      :espn => { name: "ESPN", route: "espn", url_param: "sources=espn" },
+                      :nytimes => { name: "The New York Times", route: "the-new-york-times", url_param: "sources=the-new-york-times" },
+                      :reuters => { name: "Reuters", route: "reuters", url_param: "sources=reuters" },
                       :top_news => { name: "Top News", route: "top-news", url_param: "country=us" },
-                      :business => { name: "Business", route: "business", url_param: "country=us&category=business" } }
+                      :business => { name: "Business", route: "business", url_param: "country=us&category=business" },
+                      :entertainment => { name: "Entertainment", route: "entertainment", url_param: "country=us&category=entertainment" },
+                      :health => { name: "Health", route: "health", url_param: "country=us&category=health" },
+                      :science => { name: "Science", route: "science", url_param: "country=us&category=science" },
+                      :sports => { name: "Sports", route: "sports", url_param: "country=us&category=sports" },
+                      :tech => { name: "Tech", route: "tech", url_param: "country=us&category=technology" }}
 
   # for reference to manipulate url_params
   CATEGORY_OPTIONS = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology']
