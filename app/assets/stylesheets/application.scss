@@ -15,3 +15,25 @@
 .navbar-text {
   padding-left:15px;
 }
+
+.form-inline > * {
+   margin:5px 3px;
+}
+
+.btn:disabled, .btn[disabled] {
+  background-color: #ffffff;
+  color: #ffffff
+}
+
+.card {
+  box-shadow: 4px 4px 4px gray;
+}
+
+#relish-fav-btn-group {
+  .btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  }
+}
+
+

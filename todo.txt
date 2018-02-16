@@ -1,22 +1,29 @@
 TODO
 
 -- THIS WEEK --
-complete CRUD for user favorites
-add edit function for favorites rank
-validate that favorites are unique in name and rank
-sort favorites displayed by user rank
 add models to YML (commented out)
 update README
 
 -- NEXT WEEK --
+join favorite and topic models
+sort favorites displayed by user rank
+add front page interaction
+  - link section titles to topic view
+  - change rank of sections
+
+-- FOR FINAL __
+save search as favorite
+  - save button from search results
+  - expand favorites topic to include query
+  - add search terms as favorite name?
+  - update home view to make sure search articles show
+
+fixed header
+dropdown menu to browse more sources/topics
+link
 clean up visuals
-add front page interaction for favorites: CRUD
+about page
 refactor into partials where useful
 
--- FOR FINAL
-link favorites to topics
-add search functionality
-
--- BONUS --
-rich image vs text only display
-add other APIs: twitter, gmail, HN, other
+-- EXTRA --
+embed weather forecast

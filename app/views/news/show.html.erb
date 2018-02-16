@@ -1,0 +1,23 @@
+<h3><%= "Search results for: #{@search_term}"%></h3>
+
+<% @articles.each_slice(4) do |articles_in_row| %>
+  <div class="card-deck mt-3">
+    <% articles_in_row.each do |article| %>
+      <div class="col-md-3">
+        <div class="card h-100 border-dark mb-3" style="width: 19rem;">
+          <div class="card-header text-white bg-dark">
+            <small><%= article['source']['name'] %></small>
+          </div>
+          <%= image_tag(article['urlToImage'], width: "75px", class: "card-img-top") if !article['urlToImage'].nil? %>
+          <div class="card-body">
+            <h5 class="card-title text-dark"><%= article['title'] %></h5>
+            <p class="card-text"><%= article['description'] %></p>
+          </div>
+          <div class="card-footer text-center">
+            <%= link_to("Read full story", article['url'] , class: "btn btn-primary", target: :_blank ) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   # user favorites shortcut
   get '/favorites' => 'favorites#index'
 
+  # change rank in favorites
+  get '/users/:user_id/favorites/:id/uprank' => 'favorites#uprank'
+  get '/users/:user_id/favorites/:id/downrank' => 'favorites#downrank'
+
   # users and favorites
   resources :users do
     resources :favorites
@@ -30,8 +34,9 @@ Rails.application.routes.draw do
   get '/users/:id/delete' => 'users#delete'
 
   # topics
-  # only want to show -> users do not get to add, update, or delete topics'
-  get '/:route' => 'topics#show'
+  get '/topics/:route' => 'topics#show'
 
+  # search
+  get '/search' => 'news#show'
 
 end

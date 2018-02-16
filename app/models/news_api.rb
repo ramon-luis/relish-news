@@ -41,7 +41,7 @@ class NewsApi
 
   def get_news_for_query(query_param:)
     fromDay = Date.today - 2
-    url = "#{NEWSAPI_URI}#{EVERYTHING}&q=#{topic_query}&from=#{fromDay}&#{API_KEY}"
+    url = "#{NEWSAPI_URI}#{EVERYTHING}&q=#{query_param}&from=#{fromDay}&#{API_KEY}"
     getarticlesJSON(url)
   end
 

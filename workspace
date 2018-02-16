@@ -1,37 +1,14 @@
 
+<button class="btn btn-outline-primary" type="submit">Search</button>
 
 
-<td><%= image_tag(article['urlToImage'], width: "75px") if !article['urlToImage'].nil? %></td>
-<td><%= article['source']['name'] %></td>
+<form class="form-inline mx-auto">
+<%= form_tag("/search", method: :get, enforce_utf8: false) do %>
+  <input class="form-control" name="q" size="30" placeholder="Search...">
+  <%= label_tag :q, "Search for:" %>
+  <%= text_field_tag :q, class: "form-control" %>
+  <%= button_to "Search", search_path, class: "btn btn-outline-success", method: :get %>
+<% end %>
+</form>
 
-
- <img class="card-img-top" src="..." alt="Card image cap">
- <a href="#" class="btn btn-primary">Read story</a>
-
-
-<div class="row">
-  <h1><%= @topic.name %></h1>
-</div>
-<div class="row">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Headline</th>
-        <th>Source</th>
-        <th>Published</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @articles.each do |article| %>
-        <tr>
-          <% image_url = article['urlToImage'].nil? ? "http://www.pmslweb.com/the-blog/wp-content/uploads/2017/02/22-dolphin-grows-human-arms-funny-news-article.jpg" : article['urlToImage'] %>
-          <td><%= image_tag(image_url, width: "75px") %></td>
-          <td><%= link_to article['title'], article['url'], target: :_blank %></td>
-          <td><%= article['source']['name'] %></td>
-          <td><%= article['publishedAt'] %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<%= text_field_tag(:q, placeholder: "topic or bleedcubbieblue.com") %>
