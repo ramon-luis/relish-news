@@ -2,6 +2,9 @@
 
 Relish News is a news reader that allows users to save favorite newsfeeds.
 
+Important: run `db:seed` to populate topic database before running
+
+
 ## Layout
 
 * **Headlines**: displays news headlines based on user's favorite topics.  Default is top US news headlines if no user logged in or no user favorites.  This view is a minimal view that allows easy scanning of headlines.
