@@ -1,7 +1,6 @@
 TODO
 
 -- THIS WEEK --
-add models to YML (commented out)
 update README
 
 -- NEXT WEEK --
