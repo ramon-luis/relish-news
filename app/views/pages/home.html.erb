@@ -5,11 +5,11 @@
         <th scope="col">
           <% topic = headline_section[:topic] %>
           <%= link_to "#{topic.name} ", "/topics/#{topic.route}" %>
-          <% if headline_section[:favorite].rank != 1 %>
+            <% if logged_in? && headline_section[:favorite].rank != 1 %>
           <%= link_to "- move up", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/uprank", class: "small" %>
           <% end %>
-          <% if headline_section[:favorite].rank != @user.favorites.length %>
-          <%= link_to "- move down", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/downrank" , class: "small"%>
+          <% if logged_in? && headline_section[:favorite].rank != @user.favorites.length %>
+            <%= link_to "- move down", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/downrank" , class: "small"%>
           <% end %>
           </th>
       </tr>
