@@ -34,10 +34,6 @@
 # to get more experience using migrations.  I've presented the model
 # structures below to show that I understand how to use the YML file.
 #
-# I still have remaining model work to do: I need to connect topics
-# and favorites directly.  I also would like to add search queriess
-# as topics that can be saved into user favorites.
-#
 # *****************************************
 
 # User
