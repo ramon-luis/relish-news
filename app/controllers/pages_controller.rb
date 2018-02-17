@@ -1,19 +1,20 @@
 class PagesController < ApplicationController
 
     def home
-        @favorites = []
+        @headline_sections = []
         if logged_in? && !current_user.favorites.empty?
-            current_user.favorites.each do |favorite|
-                topic = Topic.find_by(name: favorite.name)
-                topic_articles = NewsApi.new.get_news_for_topic(url_param: topic.url_param)
-                favorite = { topic: topic, topic_articles: topic_articles }
-                @favorites << favorite
+            @user = current_user
+            current_user.favorites.order(:rank).each do |favorite|
+                topic = Topic.find_by(id: favorite.topic_id)
+                articles = NewsApi.new.get_news_for_topic(url_param: topic.url_param)
+                headline_section = { favorite: favorite, topic: topic, articles: articles }
+                @headline_sections << headline_section
             end
         else
             topic = Topic.find_by(route: 'top-news')
-            topic_articles = NewsApi.new.get_news_for_topic(url_param: topic.url_param)
-            favorite = { topic: topic, topic_articles: topic_articles }
-            @favorites << favorite
+            articles = NewsApi.new.get_news_for_topic(url_param: topic.url_param)
+            headline_section = { favorite: nil, topic: topic, articles: articles }
+            @headline_sections << headline_section
         end
     end
 

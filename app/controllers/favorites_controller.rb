@@ -10,7 +10,7 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    favorite = Favorite.new(name: params[:name], rank: params[:rank], user_id: params[:user_id])
+    favorite = Favorite.new(rank: params[:rank], topic_id: params[:topic_id], user_id: params[:user_id])
     favorite.save
     normalize_rank(current_user.favorites)
     redirect_to '/favorites'
@@ -22,7 +22,7 @@ class FavoritesController < ApplicationController
     @favorites = @user.favorites
     move_favorite_up(@favorites, favorite)
     normalize_rank(@favorites)
-    redirect_to '/favorites'
+    redirect_back fallback_location: root_path
   end
 
   def downrank
@@ -31,7 +31,7 @@ class FavoritesController < ApplicationController
     @favorites = @user.favorites
     move_favorite_down(@favorites, favorite)
     normalize_rank(@favorites)
-    redirect_to '/favorites'
+    redirect_back fallback_location: root_path
   end
 
 

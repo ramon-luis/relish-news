@@ -1,15 +1,5 @@
 TODO
 
--- THIS WEEK --
-update README
-
--- NEXT WEEK --
-join favorite and topic models
-sort favorites displayed by user rank
-add front page interaction
-  - link section titles to topic view
-  - change rank of sections
-
 -- FOR FINAL __
 save search as favorite
   - save button from search results
