@@ -11,7 +11,7 @@
 Topic.delete_all
 
 NewsApi::STANDARD_TOPICS.each do |key, hash|
-  Topic.create(name: hash[:name], route: hash[:route], url_param: hash[:url_param])
+  Topic.create(name: hash[:name], query: nil, route: hash[:route], url_param: hash[:url_param])
 end
 
 

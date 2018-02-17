@@ -25,9 +25,6 @@ Important: run `db:seed` to populate topic database before running
 
 * I have intentionally attempted to develop much of the application in advance due to limited personal time during the last weeks of the quarter.
 * Remaining (hopeful) development includes:
-  * properly connecting Topics and Favorites
-  * sorting Headline sections based on user favorite rank
-  * link Headline titles to "richer" topic view
   * ability to save search queries as user favorite topics
   * add dropdown to menu bar to browse more topics
   * make the header fixed

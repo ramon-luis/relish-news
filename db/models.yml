@@ -34,10 +34,6 @@
 # to get more experience using migrations.  I've presented the model
 # structures below to show that I understand how to use the YML file.
 #
-# I still have remaining model work to do: I need to connect topics
-# and favorites directly.  I also would like to add search queriess
-# as topics that can be saved into user favorites.
-#
 # *****************************************
 
 # User
@@ -49,14 +45,6 @@
 #   password_digest: string
 #   remember_digest: string
 
-# Favorite
-#   id: integer
-#   name: string
-#   rank: integer
-#   created_at: datetime
-#   updated_at: datetime
-#   user_id: integer
-
 # Topic
 #   id: integer
 #   name: string
@@ -64,3 +52,14 @@
 #   updated_at: datetime
 #   route: string
 #   url_param: string
+
+# Favorite
+#   id: integer
+#   rank: integer
+#   user_id: integer
+#   topic_id: integer
+#   created_at: datetime
+#   updated_at: datetime
+#   user_id: integer
+
+
