@@ -13,6 +13,8 @@ link
 clean up visuals
 about page
 refactor into partials where useful
+paginate with more thab 20 stories
+pull article text to get plain text view
 
 -- EXTRA --
 embed weather forecast
