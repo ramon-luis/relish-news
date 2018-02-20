@@ -12,8 +12,23 @@
  *
  */
 
+.card-group-title {
+  font-family: 'Cutive Mono', monospace;
+}
+
+.card-header {
+  font-family: 'Cutive Mono', monospace;
+}
+
+.user-form {
+  font-family: 'Cutive Mono', monospace;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
  .navbar {
   .border: 2px solid black;
+  font-family: 'Cutive Mono', monospace;
  }
 
 .navbar-text {
@@ -38,6 +53,15 @@
 
 .jumbotron {
   margin-top: 15px;
+  height: 215px;
+}
+
+.jumbo-title {
+  font-family: 'Cutive Mono', monospace;
+}
+
+.jumbo-lead {
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn:disabled, .btn[disabled] {
@@ -53,6 +77,7 @@
 .card {
   box-shadow: 4px 4px 4px gray;
   display: inline-block;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card-title a{
@@ -62,14 +87,17 @@
 .footer-text{
   border-top: 2px black;
   text-align: center;
+  font-family: 'Cutive Mono', monospace;
 }
 
 .headline-section {
   color: white;
+  font-family: 'Cutive Mono', monospace;
 }
 
 .headline {
   color: black;
+  font-family: 'Roboto', sans-serif;
 }
 
 #dropdownTopicButton {
