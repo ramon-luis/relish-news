@@ -1,20 +1,14 @@
 TODO
 
--- FOR FINAL __
-save search as favorite
-  - save button from search results
-  - expand favorites topic to include query
-  - add search terms as favorite name?
-  - update home view to make sure search articles show
-
+rafactor & restructure
 fixed header
 dropdown menu to browse more sources/topics
-link
+
 clean up visuals
 about page
 refactor into partials where useful
-paginate with more thab 20 stories
 pull article text to get plain text view
 
 -- EXTRA --
 embed weather forecast
+embed twitter search

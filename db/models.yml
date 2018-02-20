@@ -48,10 +48,11 @@
 # Topic
 #   id: integer
 #   name: string
-#   created_at: datetime
-#   updated_at: datetime
+#   is_query: boolean
 #   route: string
 #   url_param: string
+#   created_at: datetime
+#   updated_at: datetime
 
 # Favorite
 #   id: integer

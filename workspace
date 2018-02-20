@@ -1,14 +1,6 @@
 
-<button class="btn btn-outline-primary" type="submit">Search</button>
 
 
-<form class="form-inline mx-auto">
-<%= form_tag("/search", method: :get, enforce_utf8: false) do %>
-  <input class="form-control" name="q" size="30" placeholder="Search...">
-  <%= label_tag :q, "Search for:" %>
-  <%= text_field_tag :q, class: "form-control" %>
-  <%= button_to "Search", search_path, class: "btn btn-outline-success", method: :get %>
-<% end %>
-</form>
+<% is_existing_favorite = @favorites.where(topic_id: topic[:id]).any? %>
 
-<%= text_field_tag(:q, placeholder: "topic or bleedcubbieblue.com") %>
+<%= button_to "Save to favorites", user_favorites_path(@user.id), class: "btn btn-outline-success", disabled: is_existing_favorite, method: :post, params: { rank: @favorites.length + 1, topic_id: nil, user_id: @user.id } %>

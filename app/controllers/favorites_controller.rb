@@ -10,10 +10,28 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    favorite = Favorite.new(rank: params[:rank], topic_id: params[:topic_id], user_id: params[:user_id])
-    favorite.save
+    # check if existing topic
+    if params[:is_existing_topic] == "true"
+      # save existing topic to user favorites
+      favorite = Favorite.new(rank: params[:rank], topic_id: params[:topic_id], user_id: params[:user_id])
+      favorite.save
+    else
+      # create the topic first
+      topic_name = params[:new_topic_name]
+      is_query = true
+      url_param = CGI.escape(topic_name)
+      route = url_param
+      topic = Topic.new(name: topic_name, is_query: is_query, route: route, url_param: url_param)
+      topic.save
+
+      # save the new topic to user favorites
+      favorite = Favorite.new(rank: params[:rank], topic_id: topic.id, user_id: params[:user_id])
+      favorite.save
+    end
+
     normalize_rank(current_user.favorites)
-    redirect_to '/favorites'
+    flash.now[:success] = 'Added to your favorites'
+    redirect_back fallback_location: root_path
   end
 
   def uprank

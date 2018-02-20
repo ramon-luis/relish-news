@@ -6,10 +6,12 @@
           <% topic = headline_section[:topic] %>
           <%= link_to "#{topic.name} ", "/topics/#{topic.route}" %>
             <% if logged_in? && headline_section[:favorite].rank != 1 %>
-          <%= link_to "- move up", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/uprank", class: "small" %>
+          <%= link_to "- move up", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/uprank",
+              class: "small" %>
           <% end %>
           <% if logged_in? && headline_section[:favorite].rank != @user.favorites.length %>
-            <%= link_to "- move down", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/downrank" , class: "small"%>
+            <%= link_to "- move down", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/downrank" ,
+                class: "small"%>
           <% end %>
           </th>
       </tr>
@@ -17,7 +19,12 @@
     <tbody>
       <% headline_section[:articles].each do |article| %>
         <tr>
-          <td><small><%= link_to "#{article['title']} - #{article['source']['name']}", article['url'], target: :_blank %></small></td>
+          <td>
+            <small>
+              <%= link_to "#{article['title']} - #{article['source']['name']}",
+                  article['url'], target: :_blank %>
+            </small>
+          </td>
         </tr>
       <% end %>
     </tbody>

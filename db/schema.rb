@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180214024849) do
 
   create_table "topics", force: :cascade do |t|
     t.string "name"
+    t.boolean "is_query"
     t.string "query"
     t.string "route"
     t.string "url_param"

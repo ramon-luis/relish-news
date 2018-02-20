@@ -13,7 +13,12 @@
           <li class="list-group-item d-flex justify-content-between">
             <%= topic[:name] %>
             <% is_existing_favorite = @favorites.where(topic_id: topic[:id]).exists? %>
-            <%= button_to "save to favorites", user_favorites_path(@user.id), class: "btn btn-outline-success", disabled: is_existing_favorite, method: :post, params: { rank: @favorites.length + 1, topic_id: topic[:id], user_id: @user.id } %>
+            <% if !is_existing_favorite %>
+              <%= button_to "save to favorites", user_favorites_path(@user.id),
+                class: "btn btn-outline-success", disabled: is_existing_favorite,
+                method: :post, params: { is_existing_topic: true, rank: @favorites.length + 1,
+                topic_id: topic[:id], user_id: @user.id } %>
+              <% end %>
           </li>
         <% end %>
       </ul>
@@ -33,10 +38,16 @@
             </span>
             <span id="relish-fav-btn-group">
               <% is_first_user_favorite = favorite[:rank] == 1 %>
-              <%= button_to "move up", "/users/#{@user.id}/favorites/#{favorite.id}/uprank", class: "btn btn-sm btn-outline-success", disabled: is_first_user_favorite, method: :get %>
-              <%= button_to "remove", user_favorite_path(@user, favorite.id), class: "btn btn-sm btn-outline-danger", method: :delete, params: { id: favorite.id, user_id: @user.id } %>
+              <%= button_to "move up", "/users/#{@user.id}/favorites/#{favorite.id}/uprank",
+                  class: "btn btn-sm btn-outline-success",
+                  disabled: is_first_user_favorite, method: :get %>
+              <%= button_to "remove", user_favorite_path(@user, favorite.id),
+                  class: "btn btn-sm btn-outline-danger", method: :delete,
+                  params: { id: favorite.id, user_id: @user.id } %>
               <% is_last_user_favorite = favorite[:rank] == @favorites.length %>
-              <%= button_to "move down", "/users/#{@user.id}/favorites/#{favorite.id}/downrank", class: "btn btn-sm btn-outline-success", disabled: is_last_user_favorite, method: :get %>
+              <%= button_to "move down", "/users/#{@user.id}/favorites/#{favorite.id}/downrank",
+                  class: "btn btn-sm btn-outline-success",
+                  disabled: is_last_user_favorite, method: :get %>
               </span>
           </li>
         <% end %>

@@ -4,8 +4,8 @@ class Topic < ApplicationRecord
   has_many :users, through: :favorites
 
   # validate that topic has a unique name, route, and url_param
-  validates :name, uniqueness: true
-  validates :route, uniqueness: true
-  validates :url_param, uniqueness: true
+  validates :name, uniqueness: {case_sensitive: false}
+  validates :route, uniqueness: {case_sensitive: false}
+  validates :url_param, uniqueness: {case_sensitive: false}
 
 end
