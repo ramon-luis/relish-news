@@ -1,5 +1,7 @@
 class TopicsController < ApplicationController
 
+
+
   # only want to show -> users do not get to add, update, or delete topics
   def show
     @topic = Topic.find_by(route: params["route"])
