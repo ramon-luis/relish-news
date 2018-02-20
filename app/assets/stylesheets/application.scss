@@ -12,8 +12,19 @@
  *
  */
 
+ .navbar {
+  .border: 2px solid black;
+ }
+
 .navbar-text {
   padding-left: 15px;
+}
+
+.logo {
+  img {
+    margin-right: 5px;
+    max-width: 50px;
+  }
 }
 
 .form-inline > * {
@@ -25,9 +36,18 @@
     overflow-y: auto;
 }
 
+.jumbotron {
+  margin-top: 15px;
+}
+
 .btn:disabled, .btn[disabled] {
   background-color: #ffffff;
   color: #ffffff
+}
+
+.btn-block {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .card {
@@ -35,8 +55,21 @@
   display: inline-block;
 }
 
+.card-title a{
+  color: black;
+}
+
 .footer-text{
+  border-top: 2px black;
   text-align: center;
+}
+
+.headline-section {
+  color: white;
+}
+
+.headline {
+  color: black;
 }
 
 #dropdownTopicButton {

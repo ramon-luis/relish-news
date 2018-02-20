@@ -1,7 +1,7 @@
-<header class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<header class="navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom border-dark">
 
 
-  <a class="navbar-brand" href="/">Headlines</a>
+  <a class="navbar-brand logo" href="/"><img src="/assets/newspaper_black.png">Headlines</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -31,7 +31,7 @@
 
     <%= form_tag("/search", method: :get, enforce_utf8: false, class: "form-inline search-bar") do %>
       <%= text_field_tag :q, nil, class: "form-control", size: 30, placeholder: "search...", autocomplete: :off %>
-      <%= button_to "Search", search_path, class: "btn btn-outline-success", method: :get %>
+      <%= button_to "Search", search_path, class: "btn btn-secondary", method: :get %>
     <% end %>
 
     <ul class="nav navbar-nav navbar-right">

@@ -1,4 +1,4 @@
 TODO
-clean up visuals
+custom fonts?
 view by cards or by headlines
 
