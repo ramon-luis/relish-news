@@ -1,9 +1,4 @@
 TODO
-welcome / about page
 clean up visuals
 view by cards or by headlines
 
-
--- EXTRA --
-embed twitter search?
-embed weather search?
