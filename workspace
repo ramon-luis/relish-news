@@ -1,6 +1,31 @@
 
 
-
-<% is_existing_favorite = @favorites.where(topic_id: topic[:id]).any? %>
-
-<%= button_to "Save to favorites", user_favorites_path(@user.id), class: "btn btn-outline-success", disabled: is_existing_favorite, method: :post, params: { rank: @favorites.length + 1, topic_id: nil, user_id: @user.id } %>
+  <div class="col-md-5">
+    <div class="card h-100 border-dark mb-3" style="width: 30rem;">
+      <div class="card-header text-white bg-success">
+        Your favorites
+      </div>
+      <ul class="list-group">
+        <% @favorites.order(:rank).each do |favorite| %>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>
+              <%= Topic.find_by(id: favorite.topic_id).name %>
+            </span>
+            <span id="relish-fav-btn-group">
+              <% is_first_user_favorite = favorite[:rank] == 1 %>
+              <%= button_to "move up", "/users/#{@user.id}/favorites/#{favorite.id}/uprank",
+                  class: "btn btn-sm btn-outline-success",
+                  disabled: is_first_user_favorite, method: :get %>
+              <%= button_to "remove", user_favorite_path(@user, favorite.id),
+                  class: "btn btn-sm btn-outline-danger", method: :delete,
+                  params: { id: favorite.id, user_id: @user.id } %>
+              <% is_last_user_favorite = favorite[:rank] == @favorites.length %>
+              <%= button_to "move down", "/users/#{@user.id}/favorites/#{favorite.id}/downrank",
+                  class: "btn btn-sm btn-outline-success",
+                  disabled: is_last_user_favorite, method: :get %>
+              </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>

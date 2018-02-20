@@ -29,6 +29,7 @@ class FavoritesController < ApplicationController
       favorite.save
     end
 
+    # make sure ranking number is in successive order from 1 to highest value
     normalize_rank(current_user.favorites)
     flash.now[:success] = 'Added to your favorites'
     redirect_back fallback_location: root_path
@@ -58,6 +59,5 @@ class FavoritesController < ApplicationController
     favorite.delete
     redirect_to '/favorites'
   end
-
 
 end

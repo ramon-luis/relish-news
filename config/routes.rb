@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   # root
-  root 'pages#home'
-  get '/home' => 'pages#home'
+  root 'news#home'
+  get '/home' => 'news#home'
 
   # signup
   get '/signup', to: 'users#new'
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get '/users/:id/delete' => 'users#delete'
 
   # topics
-  get '/topics/:route' => 'topics#show'
+  get '/topics/:route' => 'news#show'
 
   # search
   get '/search' => 'news#show'

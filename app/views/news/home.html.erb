@@ -1,0 +1,34 @@
+<% @headline_sections.each do |headline_section| %>
+  <table class="table table-sm table-hover">
+    <thead class="bg-dark text-white">
+      <tr>
+        <th scope="col">
+          <% topic = headline_section[:topic] %>
+            <%= link_to "#{topic.name} ", "/topics/#{topic.route}" %>
+            <% if headline_section[:favorite] != nil %>
+              <% if logged_in? && headline_section[:favorite].rank != 1 %>
+                <%= link_to "- move up", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/uprank",
+                    class: "small" %>
+              <% end %>
+              <% if logged_in? && headline_section[:favorite].rank != @user.favorites.length %>
+                <%= link_to "- move down", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/downrank" ,
+                  class: "small"%>
+              <% end %>
+            <% end %>
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% headline_section[:articles].each do |article| %>
+        <tr>
+          <td>
+            <small>
+              <%= link_to "#{article['title']} - #{article['source']['name']}",
+                  article['url'], target: :_blank %>
+            </small>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
