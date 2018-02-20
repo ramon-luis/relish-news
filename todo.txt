@@ -1,14 +1,9 @@
 TODO
-
-rafactor & restructure
-fixed header
-dropdown menu to browse more sources/topics
-
+welcome / about page
 clean up visuals
-about page
-refactor into partials where useful
-pull article text to get plain text view
+view by cards or by headlines
+
 
 -- EXTRA --
-embed weather forecast
-embed twitter search
+embed twitter search?
+embed weather search?

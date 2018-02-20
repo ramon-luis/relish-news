@@ -1,8 +1,7 @@
 <% @articles.each_slice(4) do |articles_in_row| %>
-  <div class="card-deck mt-3">
+  <div class="card-deck">
     <% articles_in_row.each do |article| %>
-      <div class="col-md-3">
-        <div class="card h-100 border-dark mb-3" style="width: 19rem;">
+        <div class="card border-dark mb-4">
           <div class="card-header text-white bg-dark">
             <small><%= article['source']['name'] %></small>
           </div>
@@ -15,7 +14,6 @@
             <%= link_to("Read full story", article['url'] , class: "btn btn-primary", target: :_blank ) %>
           </div>
         </div>
-      </div>
     <% end %>
   </div>
 <% end %>
