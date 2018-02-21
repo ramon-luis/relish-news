@@ -20,6 +20,7 @@ gem 'pg', '~> 0.18'
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5.0.0'
+gem 'rails_12factor', group: :production
 
 
 group :development, :test do
