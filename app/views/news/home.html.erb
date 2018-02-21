@@ -1,22 +1,22 @@
+<div class="content">
 
-  <%= render '/shared/welcome'  unless logged_in?%>
-
+<%= render '/shared/welcome'  unless logged_in? %>
 
 <% @headline_sections.each do |headline_section| %>
   <table class="table table-sm table-hover">
-    <thead class="bg-secondary text-white">
+    <thead class="bg-success text-white">
       <tr>
         <th scope="col">
           <% topic = headline_section[:topic] %>
-            <%= link_to "#{topic.name} ", "/topics/#{topic.route}", class: "headline-section" %>
+            <%= link_to "#{topic.name} ", "/topics/#{topic.route}", class: "headline-text" %>
             <% if headline_section[:favorite] != nil %>
               <% if logged_in? && headline_section[:favorite].rank != 1 %>
                 <%= link_to "- move up", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/uprank",
-                    class: "small" %>
+                    class: "small headline-text" %>
               <% end %>
               <% if logged_in? && headline_section[:favorite].rank != @user.favorites.length %>
                 <%= link_to "- move down", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/downrank" ,
-                  class: "small"%>
+                  class: "small headline-text"%>
               <% end %>
             <% end %>
           </th>
@@ -36,3 +36,4 @@
     </tbody>
   </table>
 <% end %>
+</div>

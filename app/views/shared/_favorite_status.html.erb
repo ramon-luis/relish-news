@@ -1,8 +1,6 @@
 <% if @show_save_to_favorites_button %>
-
   <%= button_to "Save to favorites", user_favorites_path(@user.id),
-    class: "btn btn-outline-success", method: :post,
+    class: "btn btn-sm btn-outline-success save-to-favorites-button ml-3", method: :post,
       params: { is_existing_topic: @is_existing_topic, topic_id: @topic_id,
                 new_topic_name: @search_term, user_id: @user.id, rank: @rank} %>
-
 <% end %>

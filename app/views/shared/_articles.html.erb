@@ -1,8 +1,8 @@
 <% @articles.each_slice(4) do |articles_in_row| %>
   <div class="card-deck">
     <% articles_in_row.each do |article| %>
-        <div class="card border-secondary mb-4">
-          <div class="card-header text-white bg-secondary">
+        <div class="card border-light mb-4">
+          <div class="card-header text-white bg-success">
             <small><%= article['source']['name'] %></small>
           </div>
           <%= link_to(image_tag(article['urlToImage'],  class: "card-img-top article-image"), article['url'], target: :_blank ) if !article['urlToImage'].nil? %>
@@ -12,7 +12,7 @@
             <p class="card-text text-dark small"><%= article['description'] %></p>
           </div>
           <div class="card-footer text-center">
-            <%= link_to("Read full story", article['url'] , class: "btn btn-secondary", target: :_blank ) %>
+            <%= link_to("Read full story", article['url'] , class: "btn btn-outline-success", target: :_blank ) %>
           </div>
         </div>
     <% end %>

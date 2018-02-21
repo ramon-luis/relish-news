@@ -30,7 +30,7 @@ class NewsController < ApplicationController
     # define topic, search_term, query status, url_param
     if is_search
       # should have been passed a search term
-      @search_term = params[:q]
+      @search_term = (params[:q].nil? || params[:q].empty?) ? 'Top News' : params[:q]
       @topic = Topic.where('lower(name) = ?', @search_term.downcase).first
       is_query = true
       url_param = CGI.escape(@search_term)

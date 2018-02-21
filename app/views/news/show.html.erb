@@ -1,4 +1,8 @@
-<h3 class="card-group-title"><%= @title %></h3>
+<div class="content">
+<div class="card-group-title input-group">
+  <h3 class="text-success"><%= @title %></h3>
+  <%= render 'shared/favorite_status' %>
+</div>
 
-<%= render 'shared/favorite_status' %>
 <%= render 'shared/articles' %>
+</div>

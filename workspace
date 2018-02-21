@@ -1,6 +1,1 @@
-  <%= image_tag(article['urlToImage'], class: "card-img-top article-image")
-              if !article['urlToImage'].nil? %>
-
-
-              <h5 class="card-title text-black"><%= article['title'] %></h5>
 

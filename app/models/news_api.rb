@@ -42,7 +42,7 @@ class NewsApi
   SORT_BY_OPTIONS = ['relevancy', 'popularity', 'publishedAt']
 
   # header topics
-  HEADER_TOPICS = ['Top News', 'Business', 'Sport', 'Tech']
+  HEADER_TOPICS = ['Top News', 'Business', 'Sports', 'Tech']
 
   # get news for either a query or topic
   def get_news(is_query:, url_param:)

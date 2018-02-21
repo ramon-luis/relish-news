@@ -12,12 +12,16 @@
  *
  */
 
-.card-group-title {
-  font-family: 'Cutive Mono', monospace;
-}
+ // content holder
 
-.card-header {
-  font-family: 'Cutive Mono', monospace;
+ .content {
+  margin: 10px 5px;
+ }
+
+// forms
+
+.form-inline > * {
+   margin:5px 3px;
 }
 
 .user-form {
@@ -26,34 +30,11 @@
   margin-bottom: 5px;
 }
 
- .navbar {
-  .border: 2px solid black;
-  font-family: 'Cutive Mono', monospace;
- }
+// button blocks
 
-.navbar-text {
-  padding-left: 15px;
-}
-
-.logo {
-  img {
-    margin-right: 5px;
-    max-width: 50px;
-  }
-}
-
-.form-inline > * {
-   margin:5px 3px;
-}
-
-.dropdown-menu{
-    max-height: 425px;
-    overflow-y: auto;
-}
-
-.jumbotron {
-  margin-top: 15px;
-  height: 215px;
+.btn-block {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .jumbo-title {
@@ -64,14 +45,64 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.btn:disabled, .btn[disabled] {
-  background-color: #ffffff;
-  color: #ffffff
+// header (navbar)
+ .navbar {
+  .border: 2px solid black;
+  font-family: 'Cutive Mono', monospace;
+ }
+
+.logo {
+  img {
+    margin-right: 5px;
+    max-width: 50px;
+  }
 }
 
-.btn-block {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.dropdown-menu{
+    max-height: 425px;
+    overflow-y: auto;
+}
+
+.dropdownTopicButton {
+  margin-bottom: -12px;
+}
+
+// footer
+
+.footer-text{
+  border-top: 2px black;
+  text-align: center;
+  font-family: 'Cutive Mono', monospace;
+}
+
+// headline formatting
+
+.headline {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.headline-text {
+  color: white;
+  font-family: 'Cutive Mono', monospace;
+}
+
+// news article cards
+
+.topic-text {
+  font-family: 'Cutive Mono', monospace;
+}
+
+.card-group-title {
+  font-family: 'Cutive Mono', monospace;
+  display: inline;
+  margin: 15px auto;
+}
+
+.card-header {
+  font-family: 'Cutive Mono', monospace;
+  height: 30px;
+  line-height: 4px;
 }
 
 .card {
@@ -84,27 +115,13 @@
   color: black;
 }
 
-.footer-text{
-  border-top: 2px black;
-  text-align: center;
-  font-family: 'Cutive Mono', monospace;
-}
-
-.headline-section {
-  color: white;
-  font-family: 'Cutive Mono', monospace;
-}
-
-.headline {
-  color: black;
-  font-family: 'Roboto', sans-serif;
-}
-
-#dropdownTopicButton {
+.save-to-favorites-button {
   margin-bottom: -12px;
 }
 
-#relish-fav-btn-group {
+// favorites buttons - move up & down
+
+.relish-fav-btn-group {
   .btn {
   margin-top: 5px;
   margin-bottom: 5px;

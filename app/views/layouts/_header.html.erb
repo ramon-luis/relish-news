@@ -1,20 +1,19 @@
-<header class="navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom border-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom border-dark justify-content-center">
 
-
-  <a class="navbar-brand logo" href="/"><%= image_tag("newspaper_black.png") %>Headlines</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand logo active" href="/"><%= image_tag("newspaper_black.png") %>Headlines</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+  <div class="navbar-collapse collapse w-50" id="collapsingNavbar">
 
-    <ul class="navbar-nav">
+    <ul class="navbar-nav mx-auto w-55 justify-content-start">
       <li class="nav-item"><a class="nav-link" href="/topics/top-news">Top News</a></li>
       <li class="nav-item"><a class="nav-link" href="/topics/business">Business</a></li>
       <li class="nav-item"><a class="nav-link" href="/topics/sports">Sports</a></li>
       <li class="nav-item"><a class="nav-link" href="/topics/tech">Tech</a></li>
       <li class="dropdown">
-        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownTopicButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-sm btn-secondary dropdown-toggle dropdownTopicButton" type="button" id="dropdownTopicButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           More
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownTopicButton">
@@ -29,26 +28,31 @@
       </li>
     </ul>
 
-    <%= form_tag("/search", method: :get, enforce_utf8: false, class: "form-inline search-bar") do %>
-      <%= text_field_tag :q, nil, class: "form-control", size: 30, placeholder: "search...", autocomplete: :off %>
-      <%= button_to "Search", search_path, class: "btn btn-secondary", method: :get %>
-    <% end %>
+    <ul class="navbar-nav mx-auto w-55 justify-content-center">
+        <%= form_tag("/search", method: :get, enforce_utf8: false,
+      class: "form-inline my-2 my-lg-0 search-bar") do %>
+        <%= text_field_tag :q, nil, class: "form-control mr-sm-2", size: 20,
+        placeholder: "search...", autocomplete: :off %>
+        <%= button_to "Search", search_path, class: "btn btn-success my-2 my-sm-0", method: :get %>
+      <% end %>
+    </ul>
 
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="navbar-nav mx-auto w-55 justify-content-end">
       <% if session[:user_id] != nil %>
         <% user = User.find_by(id: session[:user_id]) %>
-        <li><a class="nav-link navbar-text text-success" href="/favorites">Favorites</a></li>
-        <li><a class="nav-link navbar-text" href="/account">| Account |</a></li>
-        <li><a class="nav-link navbar-text" href="/logout">Logout</a></li>
+        <li class="nav-item"><a class="nav-link navbar-text text-success" href="/favorites">Favorites</a></li>
+        <li class="nav-item"><a class="nav-link navbar-text" href="/account">| Account |</a></li>
+        <li class="nav-item"><a class="nav-link navbar-text" href="/logout">Logout</a></li>
       <% else %>
-        <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
-        <li class="divider"></li>
-        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+        <li class="nav-item"><a class="nav-link navbar-text text-success" href="/signup">Sign Up</a></li>
+        <li class="nav-item"><a class="nav-link navbar-text" href="/login">Login</a></li>
       <% end %>
     </ul>
 
   </div>
+</nav>
 
-</header>
+
+
 
 
