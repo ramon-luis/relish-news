@@ -11,14 +11,13 @@
             <%= link_to "#{topic.name} ", "/topics/#{topic.route}", class: "headline-text" %>
             <% if headline_section[:favorite] != nil %>
               <% if logged_in? && headline_section[:favorite].rank != 1 %>
-                <%= link_to "- move up", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/uprank",
-                    class: "small headline-text" %>
+                <%= link_to " - move up", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/uprank",
+                    class: "small headline-text"%>
               <% end %>
               <% if logged_in? && headline_section[:favorite].rank != @user.favorites.length %>
-                <%= link_to "- move down", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/downrank" ,
-                  class: "small headline-text"%>
+                <%= link_to " - move down", "/users/#{@user.id}/favorites/#{headline_section[:favorite].id}/downrank" , class: "small headline-text" %>
               <% end %>
-            <% end %>
+              <% end %>
           </th>
       </tr>
     </thead>
