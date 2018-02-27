@@ -23,7 +23,6 @@ class NewsController < ApplicationController
   end
 
   def show
-
     # check if user requested headlines or article view
     @display_mode = (params[:display_mode].nil? || params[:display_mode].empty?) ? 'articles' : params[:display_mode]
 
