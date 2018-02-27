@@ -1,8 +1,21 @@
 <div class="content">
-<div class="card-group-title input-group">
-  <h3 class="text-success"><%= @title %></h3>
-  <%= render 'shared/favorite_status' %>
-</div>
 
-<%= render 'shared/articles' %>
+  <div class="card-group-title input-group">
+    <h3 class="text-success"><%= @title %></h3>
+    <%= render 'shared/favorite_status' %>
+  </div>
+    <div class="display-mode-text">
+    <% if @display_mode == 'headlines' %>
+      <%= link_to "show articles", request.query_parameters.merge({:display_mode => 'articles'}) %>
+    <% else %>
+      <%= link_to "show headlines only", request.query_parameters.merge({:display_mode => 'headlines'}) %>
+    <% end %>
+  </div>
+
+
+  <% if @display_mode == 'headlines' %>
+    <%= render 'shared/headlines' %>
+  <% else %>
+    <%= render 'shared/articles' %>
+  <% end %>
 </div>

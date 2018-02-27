@@ -1,6 +1,6 @@
 class Topic < ApplicationRecord
 
-  has_many :favorites
+  has_many :favorites, :dependent => :destroy
   has_many :users, through: :favorites
 
   # validate that topic has a unique name, route, and url_param

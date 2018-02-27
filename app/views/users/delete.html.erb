@@ -1,7 +1,11 @@
-<h1>Are you sure you want to permenantly delete your account?</h1>
-
-<p><%= link_to("Delete Account", "/users/#{@user.id}" , method: :delete) %></p>
-
-<p><%= link_to("Cancel", "/account") %></p>
+<div class="content">
+  <h3>Are you sure you want to permenantly delete your account?</h3>
+  <div class="row mb-3 ml-2 relish-button">
+    <%= button_to "Delete Account", user_path(@user.id), class: "btn btn-sm btn-danger ", method: :delete %>
+  </div>
+  <div class="row mt-3 ml-2 relish-button">
+    <%= button_to "Cancel", user_path(@user.id), class: "btn btn-sm btn-outline-success", method: :get %>
+  </div>
+</div>
 
 

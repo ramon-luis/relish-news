@@ -1,0 +1,22 @@
+<table class="table table-sm table-hover">
+  <thead class="bg-success text-white">
+    <tr>
+      <th scope="col">
+        <%= "#{@topic.name}" %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td>
+          <small>
+            <%= link_to "#{article['title']} - #{article['source']['name']}",
+                article['url'], class: "headline", target: :_blank %>
+          </small>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

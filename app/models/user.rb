@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token
 
-  has_many :favorites
+  has_many :favorites, :dependent => :destroy
   has_many :topics, through: :favorites
 
   # always downcase emails before saving

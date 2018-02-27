@@ -22,8 +22,11 @@ class NewsController < ApplicationController
     end
   end
 
-
   def show
+
+    # check if user requested headlines or article view
+    @display_mode = (params[:display_mode].nil? || params[:display_mode].empty?) ? 'articles' : params[:display_mode]
+
     # check if user passed a search
     is_search = params.has_key?(:q)
 
@@ -59,6 +62,5 @@ class NewsController < ApplicationController
       @rank = @user.favorites.length + 1
     end
   end
-
 
 end

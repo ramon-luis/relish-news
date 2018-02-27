@@ -16,6 +16,9 @@
 
  .content {
   margin: 10px 5px;
+  .btn{
+    font-family: 'Cutive Mono', monospace;
+  }
  }
 
 // forms
@@ -117,6 +120,21 @@
 
 .save-to-favorites-button {
   margin-bottom: -12px;
+}
+
+.existing-favorite-text {
+  bottom: 0;
+  margin-left: 15px;
+  padding-top: 7px;
+}
+
+// display mode
+
+.display-mode-text {
+  font-family: 'Cutive Mono', monospace;
+  margin-top: -15px;
+  margin-left: 5px;
+  margin-bottom: 15px;
 }
 
 // favorites buttons - move up & down

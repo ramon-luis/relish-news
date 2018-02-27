@@ -3,4 +3,8 @@
     class: "btn btn-sm btn-outline-success save-to-favorites-button ml-3", method: :post,
       params: { is_existing_topic: @is_existing_topic, topic_id: @topic_id,
                 new_topic_name: @search_term, user_id: @user.id, rank: @rank} %>
+<% else %>
+  <div class="existing-favorite-text">
+    <%= "(existing favorite)" %>
+  </div>
 <% end %>
