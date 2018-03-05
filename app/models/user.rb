@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   attr_accessor :remember_token
+  before_save   :downcase_email
 
   has_many :favorites, :dependent => :destroy
   has_many :topics, through: :favorites
@@ -51,4 +52,12 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_token, nil)
   end
+
+  private
+
+    # Converts email to all lower-case.
+    def downcase_email
+      self.email = email.downcase
+    end
+
 end
