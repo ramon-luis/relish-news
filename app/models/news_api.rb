@@ -10,7 +10,7 @@ class NewsApi
   NEWSAPI_URI = 'https://newsapi.org/v2/'
   TOP_HEADLINES = 'top-headlines?language=en&sortBy=popularity'
   EVERYTHING = 'everything?language=en&sortBy=popularity'
-  API_KEY = 'apiKey=4b685ee819764643b10ccbe6e533d1fd'
+  API_KEY = "apiKey=#{ENV['API_CODE']}"
 
   # note: can not mix country & sources
   STANDARD_TOPICS = {
