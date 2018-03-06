@@ -5,8 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# gem 'bootstrap', '~> 4.0.0'
-# gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'bcrypt'
 gem "ez", '1.9.7'
@@ -21,6 +19,13 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5.0.0'
 gem 'rails_12factor', group: :production
+
+# convert html to text
+# gem 'rubygems'
+gem 'nokogiri'
+gem 'html2text'
+gem 'textract'
+gem 'redcarpet'
 
 
 group :development, :test do

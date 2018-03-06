@@ -1,9 +1,3 @@
-TODO
-move API kets to ENV variables
-pull view by cards or by headlines to right
-shade images and move title over
-save articles to read later (bookmarks)
-email articles
-scrap article text?
+
 
 

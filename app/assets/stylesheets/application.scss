@@ -146,4 +146,29 @@
   }
 }
 
+// text view
+
+.text-view-content {
+  margin: 10px auto 10px 50px;
+  max-width: 650px;
+}
+
+.text-view-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1em;
+
+}
+
+.text-view-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5em;
+}
+
+.text-view-footer {
+  font-family: 'Cutive Mono', monospace;
+}
+
 

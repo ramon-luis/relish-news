@@ -33,10 +33,14 @@ Rails.application.routes.draw do
   # confirmation page to delete user account
   get '/users/:id/delete' => 'users#delete'
 
-  # topics
+  # view topics
   get '/topics/:route' => 'news#show'
 
-  # search
+  # search for articles based on topic
   get '/search' => 'news#show'
+
+  # view text of article
+  # *article_Url and constraints needed to successuflly pass escaped URL as param
+  get '/text/*article_url' => 'news#text', constraints: { article_url: /[^\/]+/, p2: /[^\/]+/ }
 
 end

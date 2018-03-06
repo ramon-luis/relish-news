@@ -1,3 +1,4 @@
+
 class NewsController < ApplicationController
 
   def home
@@ -60,6 +61,21 @@ class NewsController < ApplicationController
       @topic_id = @is_existing_topic ? @topic.id : nil
       @rank = @user.favorites.length + 1
     end
+  end
+
+  def text
+    # get the url
+    uri = params['article_url']
+
+    # extract the title and text of the article in basic markdown formatting
+    markdown_title = Textract.get_text(uri).title
+    markdown_text = Textract.get_text(uri).text
+
+    # convert the markdown to HTML
+    markdown_parser = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
+    @title = markdown_parser.render(markdown_title)
+    @text = markdown_parser.render(markdown_text)
+    @url = uri
   end
 
 end

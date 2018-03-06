@@ -1,1 +1,1 @@
-
+<%= Nokogiri::HTML(my_html).text %>

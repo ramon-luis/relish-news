@@ -1,20 +1,28 @@
 <% @articles.each_slice(4) do |articles_in_row| %>
   <div class="card-deck">
     <% articles_in_row.each do |article| %>
-        <div class="card border-light mb-4">
-          <div class="card-header text-white bg-success">
-            <small><%= article['source']['name'] %></small>
-          </div>
-          <%= link_to(image_tag(article['urlToImage'],  class: "card-img-top article-image"), article['url'], target: :_blank ) if !article['urlToImage'].nil? %>
-
-          <div class="card-body">
-            <h5 class="card-title text-black"><%= link_to(article['title'], article['url'], target: :_blank ) %></h5>
-            <p class="card-text text-dark small"><%= article['description'] %></p>
-          </div>
-          <div class="card-footer text-center">
-            <%= link_to("Read full story", article['url'] , class: "btn btn-outline-success", target: :_blank ) %>
-          </div>
+      <% article_url = CGI.escape(article['url']) %>
+      <div class="card border-secondary mb-4">
+        <div class="card-header text-white bg-success">
+          <small><%= article['source']['name'] %></small>
         </div>
+        <%= link_to(image_tag(article['urlToImage'],  class: "card-img-top article-image"),
+            "/text/#{article_url}", article_url: article_url ) if !article['urlToImage'].nil? %>
+        <div class="card-body">
+          <h5 class="card-title text-black"><%= link_to(article['title'],
+              "/text/#{article_url}", article_url: article_url ) %></h5>
+          <p class="card-text text-dark small"><%= article['description'] %>
+            <br />
+            <br />
+          <%= link_to("Continue reading...", "/text/#{article_url}", article_url: article_url) %>
+
+          </p>
+        </div>
+        <div class="card-footer text-center">
+          <%= link_to("View original story", article['url'] , class: "btn btn-outline-success",
+              target: :_blank ) %>
+        </div>
+      </div>
     <% end %>
   </div>
 <% end %>

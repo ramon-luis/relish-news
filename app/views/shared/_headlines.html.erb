@@ -8,11 +8,15 @@
   </thead>
   <tbody>
     <% @articles.each do |article| %>
+      <% article_url = CGI.escape(article['url']) %>
       <tr>
         <td>
           <small>
-            <%= link_to "#{article['title']} - #{article['source']['name']}",
-                article['url'], class: "headline", target: :_blank %>
+            <%= link_to "#{article['title']}",
+                "/text/#{article_url}", article_url: article_url, class: "headline" %>
+            <%= " - " %>
+            <%= link_to("#{article['source']['name']}", article['url'] , class: "headline text-success",
+              target: :_blank ) %>
           </small>
         </td>
       </tr>
