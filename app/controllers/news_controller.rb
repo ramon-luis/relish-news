@@ -1,6 +1,9 @@
 
 class NewsController < ApplicationController
 
+  # manages news data: headlines, articles, and article text
+
+  # homepage: displays headlines for top news or headlines for user favorites
   def home
     # array to store headline sections
     @headline_sections = []
@@ -23,6 +26,7 @@ class NewsController < ApplicationController
     end
   end
 
+  # show articles or headlines for a news topic
   def show
     # check if user requested headlines or article view
     @display_mode = (params[:display_mode].nil? || params[:display_mode].empty?) ? 'articles' : params[:display_mode]
@@ -63,6 +67,7 @@ class NewsController < ApplicationController
     end
   end
 
+  # show the text of an article
   def text
     # get the url
     uri = params['article_url']

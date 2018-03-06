@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  # manages users: CRUD
+
   # before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user,   only: [:edit, :update, :destroy]
 
@@ -55,6 +58,8 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
 
+
+  # helper methods
   private
     def user_params
       params.require(:user).permit(:name, :email, :password,

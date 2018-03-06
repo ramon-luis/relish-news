@@ -1,5 +1,4 @@
 <div class="content">
-
   <div class="card-group-title input-group">
     <h3 class="text-success"><%= @title %></h3>
     <%= render 'shared/favorite_status' %>
@@ -11,8 +10,6 @@
       <%= link_to "show headlines only", request.query_parameters.merge({:display_mode => 'headlines'}) %>
     <% end %>
   </div>
-
-
   <% if @display_mode == 'headlines' %>
     <%= render 'shared/headlines' %>
   <% else %>

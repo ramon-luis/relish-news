@@ -1,5 +1,9 @@
 class FavoritesController < ApplicationController
 
+  # manages user favorites: CRUD
+  # a user can favorite a topic (or search)
+
+  # show all favorites for a user
   def index
     if logged_in?
       @user = current_user
@@ -9,6 +13,7 @@ class FavoritesController < ApplicationController
     end
   end
 
+  # create a favorite for a user
   def create
     # check if existing topic
     if params[:is_existing_topic] == "true"
@@ -35,6 +40,7 @@ class FavoritesController < ApplicationController
     redirect_back fallback_location: root_path
   end
 
+  # increase the rank of a favorite for a user
   def uprank
     favorite = Favorite.find_by(id:params['id'])
     @user = current_user
@@ -44,6 +50,7 @@ class FavoritesController < ApplicationController
     redirect_back fallback_location: root_path
   end
 
+  # decrease the rank of a favorite for a user
   def downrank
     favorite = Favorite.find_by(id:params['id'])
     @user = current_user
@@ -53,7 +60,7 @@ class FavoritesController < ApplicationController
     redirect_back fallback_location: root_path
   end
 
-
+  # delete a user favorite
   def destroy
     favorite = Favorite.find_by(id: params['id'])
     favorite.delete

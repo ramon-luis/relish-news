@@ -24,6 +24,7 @@ module FavoritesHelper
     end
   end
 
+  # make sure that favorite ranking is consecutive starting at 1
   def normalize_rank(favorites)
     new_rank = 1
     favorites.order(:rank).each do |favorite|

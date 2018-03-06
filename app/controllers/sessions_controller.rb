@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  # manages user sessions
+
   def new
   end
 

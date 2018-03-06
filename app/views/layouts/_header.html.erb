@@ -1,12 +1,9 @@
 <nav class="navbar navbar-expand-xl navbar-light bg-light sticky-top border-bottom border-dark justify-content-center">
-
   <a class="navbar-brand logo active" href="/"><%= image_tag("newspaper_black.png") %>Headlines</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="navbar-collapse collapse w-50" id="collapsingNavbar">
-
     <ul class="navbar-nav mx-auto w-55 justify-content-start">
       <li class="nav-item"><a class="nav-link" href="/topics/top-news">Top News</a></li>
       <li class="nav-item"><a class="nav-link" href="/topics/business">Business</a></li>
@@ -27,7 +24,6 @@
         </div>
       </li>
     </ul>
-
     <ul class="navbar-nav mx-auto w-55 justify-content-center">
         <%= form_tag("/search", method: :get, enforce_utf8: false,
       class: "form-inline mt-4 mb-2 my-2 my-lg-0 search-bar") do %>
@@ -36,7 +32,6 @@
         <%= button_to "Search", search_path, class: "btn btn-success my-2 my-sm-0", method: :get %>
       <% end %>
     </ul>
-
     <ul class="navbar-nav mx-auto w-55 justify-content-end">
       <% if session[:user_id] != nil %>
         <% user = User.find_by(id: session[:user_id]) %>
@@ -48,7 +43,6 @@
         <li class="nav-item"><a class="nav-link navbar-text" href="/login">Login</a></li>
       <% end %>
     </ul>
-
   </div>
 </nav>
 
