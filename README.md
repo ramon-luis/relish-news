@@ -9,12 +9,12 @@ Users can:
 * view articles as text only within the application or open the original article in a new window
 
 <kbd>
-  <img src="https://github.com/ramon-luis/relish-news/raw/master/relish-news-screenshot-1.png">
+  <img src="https://github.com/ramon-luis/relish-news/raw/master/demo/relish-news-screenshot-1.png">
 </kbd>
 <br />
 <br />
 <kbd>
-  <img src="https://github.com/ramon-luis/relish-news/raw/master/relish-news-screenshot-1.png">
+  <img src="https://github.com/ramon-luis/relish-news/raw/master/demo/relish-news-screenshot-1.png">
 </kbd>
 
 
