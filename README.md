@@ -1,12 +1,21 @@
 # Relish News
 
-Relish News is a news reader that allows users to save favorite newsfeeds.
+[Relish News](https://ramon-luis-relish-news.herokuapp.com) is a news reader that allows users to save favorite newsfeeds.
 
 Users can:
 * view news headlines and articles based on topic and source
 * create an account to favorite topics that feed a custom home page
 * toggle between viewing headlines only or article preview cards
 * view articles as text only within the application or open the original article in a new window
+
+<kbd>
+  <img src="https://github.com/ramon-luis/relish-news/raw/master/relish-news-screenshot-1.png">
+</kbd>
+<br />
+<br />
+<kbd>
+  <img src="https://github.com/ramon-luis/relish-news/raw/master/relish-news-screenshot-1.png">
+</kbd>
 
 
 ## Getting Started
@@ -16,10 +25,10 @@ Otherwise, follow the basic steps below to get up and running.
 
 Install gems, migrate & seed the db, start the rails server.
 
-`$ rails bundle`
-`$ rails db:migrate`
-`$ rails db:seed`
-`$ rails s`
+1. `$ rails bundle`
+2. `$ rails db:migrate`
+3. `$ rails db:seed`
+4. `$ rails s`
 
 Go to `localhost:3000` in a web broswer to view.
 
