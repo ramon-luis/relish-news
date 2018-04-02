@@ -14,7 +14,7 @@ Users can:
 <br />
 <br />
 <kbd>
-  <img src="https://github.com/ramon-luis/relish-news/raw/master/demo/relish-news-screenshot-1.png">
+  <img src="https://github.com/ramon-luis/relish-news/raw/master/demo/relish-news-screenshot-2.png">
 </kbd>
 
 
